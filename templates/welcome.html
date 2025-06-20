@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Augmentation</title>
+    <style>
+        body {
+            background: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 500px;
+        }
+
+        h1 {
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        p.description {
+            font-size: 15px;
+            color: #4b5563;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .checkbox-group {
+            margin: 10px 0 20px;
+        }
+        .checkbox-group label {
+            font-weight: normal;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .info-box {
+            background-color: #e0f2fe;
+            border-left: 5px solid #0284c7;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #0c4a6e;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h1>Image Augmentation Tool</h1>
+    <p class="description">Generate multiple augmented versions of your image to enhance dataset diversity for machine learning or research projects.</p>
+
+    <form method="post" action="/GenerateSingleImage/">
+        {% csrf_token %}
+
+        <label for="number">Number of Images to Generate</label>
+        <input type="text" name="number" id="number" placeholder="e.g. 5 or 10" required>
+
+        <button type="submit">Generate Augmented Images</button>
+    </form>
+
+    <div class="info-box">
+        <strong>What is Image Augmentation?</strong><br>
+        Image augmentation artificially increases the diversity of your dataset by applying random transformations like rotation, flipping, brightness changes, and more. It's especially useful for training machine learning models.
+    </div>
+</div>
+</body>
+</html>

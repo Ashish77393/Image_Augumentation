@@ -1,0 +1,9 @@
+h1 {
+  color: red;
+  background-color: red;
+  background-image: url("https://via.placeholder.com/300x100");
+}
+
+.anchor {
+  text-decoration: none;
+}
