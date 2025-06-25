@@ -23,7 +23,7 @@ def GenerateSingleImage(request):
         img_obj = ImageFile.objects.last()
         num=request.POST.get('number')
         n = int(num)
-        print(type(n))
+
         img_path = os.path.join(settings.MEDIA_ROOT, str(img_obj.img))
 
         # ✅ Load the image with target size directly
@@ -44,7 +44,6 @@ def GenerateSingleImage(request):
         # ✅ Convert image to array
         img_array = img_to_array(img)
         input_batch = img_array.reshape((1, 1000, 1000, 3))
-        print(input_batch)
         i=0
         save_path = os.path.join(settings.BASE_DIR,  'Imagefolder')
         for output in datagen.flow(input_batch,batch_size=1, save_to_dir=save_path, save_format='jpeg'):
