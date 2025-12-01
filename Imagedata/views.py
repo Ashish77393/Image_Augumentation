@@ -54,6 +54,6 @@ def GenerateSingleImage(request):
         # aug_iter = datagen.flow(input_batch)
         # aug_img = next(aug_iter)[0]  # first augmented image
 
-        return HttpResponse("Image uploaded and processed successfully.")
+        return render(request,'Home.html')
 
     return HttpResponse("Only POST method allowed", status=405)
