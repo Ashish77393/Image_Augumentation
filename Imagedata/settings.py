@@ -26,6 +26,11 @@ SECRET_KEY = 'django-insecure-y1=)35(_^t9n1zb7-o5ohh27aq#rmwjyz(7jei113^6n++)*_)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = [
+    'image-augumentation-2.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 
